@@ -1,37 +1,42 @@
 let clickedCard = null;
+let preventClick = false;
 
 function onCardClicked(e) {
   const target = e.currentTarget;
-
-  if(target === clickedCard ||
-    target.className.includes('done')) {
-      return;
-  }
+  if( preventClick ||
+    target=== clickedCard ||
+    target.className.includes('done')){
+          return;
+      }
   target.className = target.className
-  .replace("color-hidden", "")
+  .replace('color-hidden', '')
   .trim();
-  target.className += 'done';
+  
+//   if( target === clickCard ||
   
 
-  if (!clickedCard) {
-    //if we haven't clicked matched a card , keep track of it
-    clickedCard = target;
-  } else if (clickedCard) {
-    if (
-      clickedCard.getAttribute("data-color") ===
-      target.getAttribute("data-color")
-    ) {
-        
-    //   clickedCard.className += "done";
-    //   target.className += "done";
-    }else {
-        console.log('cards not equal');
-        setTimeout(() => {
-        clickedCard.className.replace('done', '').trim();
-        target.className.replace('done', '').trim();    
-        }, 500);
-    }
-  }
-}
 
-// if we have clicked on a card and it matches with another card, display
+  //if we haven't clicked a card, keep track of the card, display it's color
+  if (!clickedCard) {
+    clickedCard =target;
+    
+  } else if (clickedCard) {
+  
+  //if we have already clicked on a card, check if the new card matches the old card color
+  preventClick = false;
+  if (
+    clickedCard.getAttribute('data-color') !== 
+    target.getAttribute('data-color')) 
+       {
+      console.log('cards not equal');
+    setTimeout(() => {
+        clickedCard.className = clickedCard.className.replace('done', '').trim() + 'color-hidden';
+        target.className.replace('done', '').trim() + 'color-hidden';
+        clickedCard = null;
+        preventClick = false;
+    }, 500); 
+}else{
+    clickedCard = null;
+}
+}
+}
