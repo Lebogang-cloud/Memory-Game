@@ -1,7 +1,8 @@
-*{
+body{
     text-align: center;
-    background: crimson;
-    color: rgb(203, 186, 219);
+    background: url("/pexels-photo-411207.jpeg") center center;
+    background-repeat: no-repeat;
+    color: rgb(78, 31, 206);
 
 }
 
@@ -13,7 +14,6 @@
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: blueviolet;
     cursor: pointer;
 }
 
@@ -61,4 +61,10 @@
 
 .color-hidden {
     background: blueviolet;
+}
+
+footer {
+    padding-top: 7%;
+    color: rgb(4, 0, 12);
+    font-size: larger;
 }
