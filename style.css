@@ -1,3 +1,10 @@
+*{
+    text-align: center;
+    background: crimson;
+    color: rgb(203, 186, 219);
+
+}
+
 .row {
     text-align: center;
 }
@@ -6,7 +13,7 @@
     display: inline-block;
     width: 100px;
     height: 100px;
-    background-color: #eee;
+    background: blueviolet;
     cursor: pointer;
 }
 
@@ -25,33 +32,33 @@
 }
 
 .red {
-    background-color: red;
+    background: red;
 }
 
 .green {
-    background-color: green;
+    background: green;
 }
 
 .blue {
-    background-color: blue;
+    background: blue;
 }
 .orange {
-    background-color: orange;
+    background: orange;
 }
 .cyan {
-    background-color: cyan;
+    background: cyan;
 }
 .yellow {
-    background-color: yellow;
+    background: yellow;
 }
 .pink {
-    background-color: pink;
+    background: pink;
 }
 
 .teal {
-    background-color: teal;
+    background: teal;
 }
 
 .color-hidden {
-    background-color: blueviolet;
+    background: blueviolet;
 }
